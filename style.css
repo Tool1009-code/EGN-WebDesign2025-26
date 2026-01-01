@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Brand Colors (from your logo)
+   Blue: #1e3c72
+   Green: #2ecc71
+   Black: #000000
+   White: #ffffff
+*/
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+/* Layout Wrapper */
+section, header, footer, nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e3c72, #2ecc71);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero-logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #2ecc71;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #3ff08a;
+}
+
+/* Promo Section */
+#promo {
+    background: #e8f5ff;
+    border-left: 6px solid #1e3c72;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+/* Limited-Time Pricing Notice */
+.limited-time {
+    background: #fff3cd;
+    border-left: 6px solid #ffcc00;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #1e3c72;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Tennessee Owned & Operated (Red, White & Blue) */
+.tn-owned {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #b30000, #ffffff, #002f6c);
+    color: #000;
+    margin: 25px 0;
+}
+
+/* Contact Section */
+#contact em {
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e3c72;
+    color: white;
+    margin-top: 40px;
+}
