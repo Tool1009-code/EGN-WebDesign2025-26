@@ -1,89 +1,50 @@
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGN Web Design</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #222;
-    line-height: 1.6;
-    padding: 20px;
-}
+<body>
 
-/* Header */
-header {
-    text-align: center;
-    padding: 20px 0;
-}
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="egn-logo.png" alt="EGN Web Design Logo" class="hero-logo">
+        <h1>EGN Web Design</h1>
+        <p>Affordable, modern websites for small businesses</p>
+    </header>
 
-header img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-}
+    <!-- Tennessee Owned Section -->
+    <section class="tennessee">
+        <h2>100% Tennessee Owned & Operated</h2>
+        <p>Proudly serving West Tennessee and small businesses across the region.</p>
+    </section>
 
-header h1 {
-    font-size: 2.2rem;
-    color: #111;
-}
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Me</h2>
+        <p>I build clean, modern, affordable websites for small businesses in West Tennessee and beyond.</p>
+    </section>
 
-/* Navigation */
-nav {
-    text-align: center;
-    margin: 20px 0;
-}
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Custom Website Design</li>
+            <li>Website Redesign</li>
+            <li>Maintenance & Updates</li>
+            <li>Local & Remote Support</li>
+        </ul>
+    </section>
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 15px;
-    font-weight: bold;
-}
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Email: your-email@example.com</p>
+        <p>Serving West Tennessee & Remote Clients</p>
+    </section>
 
-nav a:hover {
-    color: #000;
-}
-
-/* Main Content */
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Section Titles */
-h2 {
-    margin-bottom: 10px;
-    color: #111;
-}
-
-/* Paragraphs */
-p {
-    margin-bottom: 15px;
-}
-
-/* Services List */
-ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 15px;
-    color: #555;
-    font-size: 0.9rem;
-}
+</body>
+</html>
