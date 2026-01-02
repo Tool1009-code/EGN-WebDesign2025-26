@@ -1,108 +1,142 @@
-* Global Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
-    line-height: 1.6;
-}
-
-/* Brand Colors (from your logo)
+/* =========================================================
+   EGN Web Design — Global Styles & Branding
+   Brand Colors:
    Blue: #1e3c72
    Green: #2ecc71
    Black: #000000
    White: #ffffff
-*/
+   ========================================================= */
 
-h1, h2, h3 {
-    margin-top: 0;
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Layout Wrapper */
-section, header, footer, nav {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+/* Body Background + Typography */
+body {
+    font-family: Arial, sans-serif;
+    background: #0d0d0d url('images/blueprint background.png') repeat;
+    background-size: 600px;
+    color: #eaeaea;
+    line-height: 1.7;
 }
 
-/* Hero Section */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 .hero {
-    background: linear-gradient(135deg, #1e3c72, #2ecc71);
-    color: white;
     text-align: center;
-    padding: 120px 20px;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.65);
+    border-bottom: 2px solid #1e3c72;
 }
 
 .hero-logo {
-    width: 180px;
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
 .cta-btn {
     display: inline-block;
-    background: #2ecc71;
-    color: #000;
-    padding: 12px 25px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    background: #1e3c72;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
 .cta-btn:hover {
-    background: #3ff08a;
+    background: #2ecc71;
+    color: #000;
 }
 
-/* Promo Section */
+/* =========================================================
+   PROMO SECTION
+   ========================================================= */
 #promo {
-    background: #e8f5ff;
-    border-left: 6px solid #1e3c72;
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid #2ecc71;
 }
 
-/* Limited-Time Pricing Notice */
-.limited-time {
-    background: #fff3cd;
-    border-left: 6px solid #ffcc00;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 25px;
-    font-weight: bold;
+#promo h2 {
+    color: #2ecc71;
+    margin-bottom: 15px;
 }
 
-/* Navigation */
+#promo p {
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 nav {
-    background: #ffffff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    background: #1e3c72;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 2px solid #2ecc71;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
 }
 
 nav a {
+    color: #fff;
     text-decoration: none;
-    color: #000;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #1e3c72;
+    color: #2ecc71;
 }
 
-/* Services Grid */
+/* =========================================================
+   SECTIONS (Services, Pricing, About, Contact)
+   ========================================================= */
+section {
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 10px;
+    border: 1px solid #1e3c72;
+}
+
+section h2 {
+    text-align: center;
+    color: #2ecc71;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -110,40 +144,48 @@ nav a:hover {
 }
 
 .service-card {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid #1e3c72;
     transition: 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: rgba(46, 204, 113, 0.15);
+    transform: translateY(-4px);
 }
 
-/* Tennessee Owned & Operated (Red, White & Blue) */
+.service-card h3 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   ABOUT SECTION SPECIAL TEXT
+   ========================================================= */
 .tn-owned {
-    font-size: 1.2rem;
+    color: #1e90ff;
     font-weight: bold;
     text-align: center;
-    padding: 15px;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #b30000, #ffffff, #002f6c);
-    color: #000;
-    margin: 25px 0;
+    margin-top: 20px;
 }
 
-/* Contact Section */
-#contact em {
-    color: #555;
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+#contact p {
+    margin-bottom: 10px;
 }
 
-/* Footer */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
     text-align: center;
     padding: 20px;
     background: #1e3c72;
-    color: white;
+    color: #fff;
     margin-top: 40px;
+    border-top: 2px solid #2ecc71;
 }
