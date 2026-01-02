@@ -190,3 +190,14 @@ footer {
     border-top: 2px solid #2ecc71;
 }
 
+/* =========================================================
+   DESKTOP-ONLY LARGER LOGO
+   ========================================================= */
+@media (min-width: 1024px) {
+    .hero-logo {
+        width: 300px;   /* roughly double the current size */
+        height: auto;
+    }
+}
+
+
