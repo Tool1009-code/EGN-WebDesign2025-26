@@ -17,7 +17,7 @@
 /* Body Background + Typography */
 body {
     font-family: Arial, sans-serif;
-    background: #0d0d0d url('images/blueprint background.png') repeat;
+    background: #0d0d0d url('img/blueprint-background.png') repeat;
     background-size: 600px;
     color: #eaeaea;
     line-height: 1.7;
@@ -189,3 +189,4 @@ footer {
     margin-top: 40px;
     border-top: 2px solid #2ecc71;
 }
+
