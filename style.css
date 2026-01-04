@@ -17,8 +17,8 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background:
-        #0f0f12
-        url("blueprint-background.png") repeat;
+    #0f0f12
+    url("img/blueprint-background.png") repeat;
     background-size: 650px; /* adjust texture scale */
     color: #e6e6e6;
     line-height: 1.6;
@@ -251,5 +251,6 @@ footer {
         margin: 6px 0;
     }
 }
+
 
 
