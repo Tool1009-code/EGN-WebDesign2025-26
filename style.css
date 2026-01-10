@@ -16,13 +16,16 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
+    /* Ghosted blueprint background */
     background:
-        #0f0f12
+        linear-gradient(rgba(15,15,18,0.90), rgba(15,15,18,0.90)),
         url("img/blueprint-background.png") repeat;
     background-size: 650px;
+    background-blend-mode: lighten;
+    
     color: #e6e6e6;
     line-height: 1.6;
-    opacity: 0.98;
 }
 
 /* ---------- Global Layout ---------- */
