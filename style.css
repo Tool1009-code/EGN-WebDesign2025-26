@@ -9,12 +9,12 @@
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    background: #f7f7f7;
+    background: linear-gradient(135deg, #0a3d62 0%, #0f4c81 100%);
     color: #222;
     line-height: 1.6;
 }
 
-/* Global container spacing */
+/* Section spacing */
 section {
     padding: 60px 20px;
     max-width: 1100px;
@@ -35,31 +35,31 @@ p {
 -------------------------------------------------- */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 90px 20px;
     background: white;
     border-bottom: 1px solid #ddd;
 }
 
 .hero-logo {
-    width: 140px;
+    width: 150px;
     height: auto;
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .hero p {
     max-width: 700px;
     margin: 0 auto 25px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .cta-btn {
     display: inline-block;
-    background: #0077ff;
+    background: #0a3d62;
     color: white;
     padding: 14px 26px;
     border-radius: 8px;
@@ -69,35 +69,14 @@ p {
 }
 
 .cta-btn:hover {
-    background: #005fcc;
-}
-
-/* --------------------------------------------------
-   TOP HIGHLIGHTS (3 CARD ROW)
--------------------------------------------------- */
-.top-highlights {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.highlight-box {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.highlight-box h2,
-.highlight-box h3 {
-    margin-bottom: 10px;
+    background: #08324f;
 }
 
 /* --------------------------------------------------
    NAVIGATION
 -------------------------------------------------- */
 nav {
-    background: #111;
+    background: #0a3d62;
     padding: 12px 0;
 }
 
@@ -117,11 +96,48 @@ nav a {
 }
 
 nav a:hover {
-    color: #66aaff;
+    color: #a8d0ff;
 }
 
 /* --------------------------------------------------
-   CARD GRID (Used for services, packages, maintenance)
+   CARD ACCENT CLIP (applies to all cards)
+-------------------------------------------------- */
+.card {
+    position: relative;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+    overflow: hidden;
+}
+
+/* Accent bar on left side */
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #0a3d62;
+    border-radius: 12px 0 0 12px;
+}
+
+/* --------------------------------------------------
+   TOP HIGHLIGHTS
+-------------------------------------------------- */
+.top-highlights {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.highlight-box {
+    composes: card;
+}
+
+/* --------------------------------------------------
+   UNIVERSAL GRID SYSTEM
 -------------------------------------------------- */
 .services-grid,
 .payments-grid,
@@ -132,57 +148,14 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* --------------------------------------------------
+   SERVICE / PAYMENT / TESTIMONIAL / PROCESS CARDS
+-------------------------------------------------- */
 .service-card,
 .payment-card,
 .testimonial-card,
 .process-step {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.service-card h3,
-.payment-card h3,
-.testimonial-card h3,
-.process-step h3 {
-    margin-bottom: 10px;
-}
-
-/* --------------------------------------------------
-   MAINTENANCE SECTION
--------------------------------------------------- */
-.update-options {
-    margin-top: 40px;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.update-options ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.update-note {
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* --------------------------------------------------
-   PROCESS STEPS
--------------------------------------------------- */
-.process-step p {
-    margin-top: 8px;
-}
-
-/* --------------------------------------------------
-   TESTIMONIALS
--------------------------------------------------- */
-.testimonial-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    composes: card;
 }
 
 .testimonial-text {
@@ -196,11 +169,29 @@ nav a:hover {
 }
 
 /* --------------------------------------------------
+   MAINTENANCE SECTION
+-------------------------------------------------- */
+.update-options {
+    composes: card;
+    margin-top: 40px;
+}
+
+.update-options ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.update-note {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------
    PAYMENTS
 -------------------------------------------------- */
 .payment-btn {
     display: inline-block;
-    background: #0077ff;
+    background: #0a3d62;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -211,7 +202,7 @@ nav a:hover {
 }
 
 .payment-btn:hover {
-    background: #005fcc;
+    background: #08324f;
 }
 
 .payment-logos img {
@@ -223,10 +214,7 @@ nav a:hover {
    ABOUT SECTION
 -------------------------------------------------- */
 .credentials-box {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    composes: card;
     margin: 25px 0;
 }
 
@@ -248,7 +236,7 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 25px;
-    background: #111;
+    background: #0a3d62;
     color: white;
     margin-top: 40px;
     font-size: 0.9rem;
