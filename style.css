@@ -1,24 +1,26 @@
 /* =========================================================
-   EGN Web Design — Modern Big‑Tech Stylesheet (2026 Refresh)
-   Clean Dark Theme + Unified Accent System
+   EGN Web Design — Light Gray Tech Theme (Logo‑Based)
+   Clean, Bright, Professional (Microsoft‑Style)
    ========================================================= */
 
 /* ---------- CSS Variables (Theme System) ---------- */
 :root {
-    --bg-main: #0f1115;
-    --bg-card: #16181d;
-    --bg-card-hover: #1c1f25;
+    --bg-main: #f2f4f7;          /* Light gray background */
+    --bg-card: #ffffff;          /* Clean white cards */
+    --bg-card-hover: #fafbfc;
 
-    --text-main: #e8e8e8;
-    --text-soft: #cfcfcf;
-    --text-accent: #4da3ff;
+    --text-main: #1a1a1a;
+    --text-soft: #4a4a4a;
 
-    --accent: #4da3ff;
-    --accent-strong: #1c7be8;
+    --accent-blue: #1e90ff;      /* Logo blue */
+    --accent-blue-dark: #0b6fcc;
+
+    --accent-red: #b30000;       /* Logo red */
+    --accent-green: #3cb043;     /* Logo leaf green */
 
     --radius: 12px;
-    --shadow: 0 4px 14px rgba(0,0,0,0.45);
-    --shadow-hover: 0 6px 20px rgba(0,0,0,0.55);
+    --shadow: 0 4px 14px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.10);
 }
 
 /* ---------- Global Reset ---------- */
@@ -48,7 +50,7 @@ section {
 
 h1, h2, h3 {
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 h2 {
@@ -56,7 +58,7 @@ h2 {
     text-align: center;
     font-size: 2.1rem;
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 3px solid var(--accent-blue);
     display: inline-block;
 }
 
@@ -72,8 +74,8 @@ p {
 .hero {
     text-align: center;
     padding: 120px 20px;
-    background: linear-gradient(180deg, #14161b, #0f1115);
-    border-bottom: 2px solid var(--accent);
+    background: linear-gradient(180deg, #ffffff, #eef2f7);
+    border-bottom: 3px solid var(--accent-blue);
 }
 
 .hero-logo {
@@ -94,7 +96,7 @@ p {
 
 .cta-btn {
     display: inline-block;
-    background: var(--accent);
+    background: var(--accent-blue);
     color: #ffffff;
     padding: 14px 34px;
     border-radius: var(--radius);
@@ -105,16 +107,16 @@ p {
 }
 
 .cta-btn:hover {
-    background: var(--accent-strong);
+    background: var(--accent-blue-dark);
 }
 
 /* =========================================================
    NAVIGATION
    ========================================================= */
 nav {
-    background: #13151a;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(6px);
+    background: #ffffff;
+    border-bottom: 1px solid #d9dce1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 nav ul {
@@ -137,7 +139,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent);
+    color: var(--accent-blue);
 }
 
 /* =========================================================
@@ -166,7 +168,7 @@ nav a:hover {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: 0.25s ease;
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-blue);
 }
 
 .card:hover,
@@ -184,18 +186,13 @@ nav a:hover {
    TESTIMONIALS
    ========================================================= */
 .testimonial-card {
-    border-left: 4px solid var(--accent-strong);
-}
-
-.testimonial-card p {
-    font-size: 1rem;
-    color: var(--text-soft);
+    border-left: 4px solid var(--accent-red);
 }
 
 .testimonial-name {
     margin-top: 14px;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-blue);
     font-size: 1.15rem;
 }
 
@@ -204,7 +201,7 @@ nav a:hover {
    ========================================================= */
 .payment-btn {
     display: inline-block;
-    background: var(--accent);
+    background: var(--accent-blue);
     color: #ffffff;
     padding: 12px 24px;
     border-radius: var(--radius);
@@ -215,13 +212,7 @@ nav a:hover {
 }
 
 .payment-btn:hover {
-    background: var(--accent-strong);
-}
-
-.payment-logos img {
-    width: 100%;
-    max-width: 260px;
-    margin-top: 20px;
+    background: var(--accent-blue-dark);
 }
 
 .payment-note {
@@ -237,26 +228,15 @@ nav a:hover {
     background: var(--bg-card);
     padding: 24px;
     border-radius: var(--radius);
-    border-left: 4px solid var(--accent-strong);
+    border-left: 4px solid var(--accent-red);
     margin: 35px 0;
-}
-
-.credentials-box ul {
-    margin-left: 22px;
 }
 
 .tn-owned {
     font-size: 1.3rem;
-    color: var(--accent);
+    color: var(--accent-blue);
     font-weight: 700;
     margin-top: 24px;
-}
-
-/* =========================================================
-   CONTACT SECTION
-   ========================================================= */
-#contact p {
-    font-size: 1.18rem;
 }
 
 /* =========================================================
@@ -265,10 +245,10 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 28px;
-    background: #13151a;
+    background: #ffffff;
     color: var(--text-soft);
     margin-top: 60px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid #d9dce1;
 }
 
 /* =========================================================
