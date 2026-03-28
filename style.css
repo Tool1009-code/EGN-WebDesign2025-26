@@ -1,16 +1,19 @@
 /* =========================================
-   EGN Web Design — Professional Base Styles
-   Modern • Uniform • Logo Colors • No Black
+   EGN Web Design — Professional UI System
+   Pricing Plans • Testimonials • Layout
    ========================================= */
 
 /* ---------- Color System ---------- */
 :root {
-  --egn-blue: #007bff;        /* Primary brand blue */
-  --egn-blue-dark: #005fcc;   /* Darker accent */
-  --egn-silver: #e5e5e5;      /* Light silver */
-  --egn-gray: #bfc4c9;        /* Neutral gray */
-  --egn-white: #ffffff;       /* Clean white */
-  --text-dark: #1a1a1a;       /* Professional dark text (not black) */
+  --egn-blue: #007bff;
+  --egn-blue-dark: #005fcc;
+  --egn-silver: #e5e5e5;
+  --egn-gray: #bfc4c9;
+  --egn-white: #ffffff;
+  --text-dark: #1a1a1a;
+
+  --card-bg: #f7f9fc;
+  --shadow-soft: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 /* ---------- Global Reset ---------- */
@@ -24,26 +27,26 @@ html {
   font-family: "Inter", "Segoe UI", sans-serif;
   color: var(--text-dark);
   background: var(--egn-white);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* ---------- Layout ---------- */
 body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* ---------- Typography ---------- */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  color: var(--egn-blue-dark);
-  letter-spacing: -0.5px;
+/* ---------- Section Layout ---------- */
+section {
+  margin: 4rem 0;
 }
 
-p {
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--egn-blue-dark);
 }
 
 /* ---------- Navigation ---------- */
@@ -82,18 +85,109 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* ---------- Cards ---------- */
+/* ---------- Generic Card ---------- */
 .card {
-  background: var(--egn-silver);
-  padding: 1.5rem;
-  border-radius: 10px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
   border: 1px solid var(--egn-gray);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   PRICING PLANS
+   ========================================= */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: var(--egn-white);
+  border: 1px solid var(--egn-gray);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+}
+
+.pricing-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--egn-blue-dark);
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--egn-blue);
+  margin-bottom: 1.5rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--egn-silver);
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+/* =========================================
+   TESTIMONIALS
+   ========================================= */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--egn-gray);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--egn-blue-dark);
+  font-size: 1.1rem;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  color: var(--egn-gray);
 }
 
 /* ---------- Footer ---------- */
