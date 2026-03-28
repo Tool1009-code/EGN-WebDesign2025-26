@@ -1,138 +1,89 @@
 /* =========================================
-   EGN Web Design — Professional UI System
-   Pricing Plans • Testimonials • Layout
+   EGN Web Design — Grey Layout + Card System
    ========================================= */
 
-/* ---------- Color System ---------- */
+/* ---------- Base Colors ---------- */
 :root {
+  --bg-grey: #f2f2f2;
+  --card-white: #ffffff;
+  --border-light: #dcdcdc;
   --egn-blue: #007bff;
   --egn-blue-dark: #005fcc;
-  --egn-silver: #e5e5e5;
-  --egn-gray: #bfc4c9;
-  --egn-white: #ffffff;
   --text-dark: #1a1a1a;
-
-  --card-bg: #f7f9fc;
-  --shadow-soft: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* ---------- Global Reset ---------- */
-* {
+/* ---------- Global ---------- */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html {
+  background: var(--bg-grey);
   font-family: "Inter", "Segoe UI", sans-serif;
   color: var(--text-dark);
-  background: var(--egn-white);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
-body {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ---------- Centered Logo ---------- */
+.header-logo {
+  text-align: center;
+  padding: 2.5rem 0 1rem;
 }
 
-/* ---------- Section Layout ---------- */
-section {
-  margin: 4rem 0;
+.header-logo img {
+  max-width: 180px;
+  height: auto;
 }
 
+/* ---------- Section Wrapper (Card) ---------- */
+.section-card {
+  background: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 3rem 2.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* ---------- Section Titles ---------- */
 .section-title {
   text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--egn-blue-dark);
-}
-
-/* ---------- Navigation ---------- */
-nav {
-  background: var(--egn-blue);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-}
-
-nav a {
-  color: var(--egn-white);
-  text-decoration: none;
-  margin-right: 1.5rem;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
-}
-
-nav a:hover {
-  opacity: 0.75;
-}
-
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: var(--egn-blue);
-  color: var(--egn-white);
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.15s ease;
-}
-
-.btn:hover {
-  background: var(--egn-blue-dark);
-  transform: translateY(-2px);
-}
-
-/* ---------- Generic Card ---------- */
-.card {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--egn-gray);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
 }
 
 /* =========================================
-   PRICING PLANS
+   PRICING GRID
    ========================================= */
-
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-.pricing-card {
-  background: var(--egn-white);
-  border: 1px solid var(--egn-gray);
-  border-radius: 14px;
-  padding: 2.5rem 2rem;
+.pricing-box {
+  background: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
   text-align: center;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
-.pricing-card:hover {
-  transform: translateY(-6px);
+.pricing-box:hover {
+  transform: translateY(-5px);
 }
 
 .pricing-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--egn-blue-dark);
   margin-bottom: 1rem;
 }
 
 .pricing-price {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--egn-blue);
   margin-bottom: 1.5rem;
@@ -140,63 +91,62 @@ nav a:hover {
 
 .pricing-features {
   list-style: none;
-  margin-bottom: 2rem;
+  padding: 0;
+  margin: 0 0 2rem;
 }
 
 .pricing-features li {
   padding: 0.4rem 0;
-  font-size: 1rem;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--egn-silver);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .pricing-features li:last-child {
   border-bottom: none;
 }
 
-/* =========================================
-   TESTIMONIALS
-   ========================================= */
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--egn-blue);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
 
+.btn:hover {
+  background: var(--egn-blue-dark);
+}
+
+/* =========================================
+   TESTIMONIAL GRID
+   ========================================= */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.testimonial-card {
-  background: var(--card-bg);
+.testimonial-box {
+  background: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
   padding: 2rem;
-  border-radius: 14px;
-  border: 1px solid var(--egn-gray);
-  box-shadow: var(--shadow-soft);
-  position: relative;
 }
 
 .testimonial-text {
   font-style: italic;
-  margin-bottom: 1.5rem;
-  color: #333;
+  margin-bottom: 1.2rem;
 }
 
 .testimonial-author {
   font-weight: 700;
   color: var(--egn-blue-dark);
-  font-size: 1.1rem;
 }
 
 .testimonial-role {
   font-size: 0.9rem;
-  color: var(--egn-gray);
-}
-
-/* ---------- Footer ---------- */
-footer {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background: var(--egn-blue-dark);
-  color: var(--egn-white);
-  text-align: center;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  color: #777;
 }
