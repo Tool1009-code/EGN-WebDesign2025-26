@@ -1,6 +1,6 @@
-/* --------------------------------------------------
+/* ===========================
    GLOBAL RESET & BASE STYLES
--------------------------------------------------- */
+=========================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,243 +8,217 @@
 }
 
 body {
-    font-family: "Inter", Arial, sans-serif;
-    background: linear-gradient(135deg, #0a3d62 0%, #0f4c81 100%);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7f9;
     color: #222;
     line-height: 1.6;
 }
 
-/* Section spacing */
-section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-    background: #f0f0f0;
+/* EGN Brand Colors */
+:root {
+    --egn-blue: #0077cc;
+    --egn-green: #00aa88;
+    --egn-dark: #0a1a2a;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.08);
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-    color: #111;
-}
-
-p {
-    margin-bottom: 12px;
-}
-
-/* --------------------------------------------------
+/* ===========================
    HERO SECTION
--------------------------------------------------- */
+=========================== */
 .hero {
     text-align: center;
-    padding: 90px 20px;
-    background: #0a3d62;
-    border-bottom: 1px solid #ddd;
-    color: #fff;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--egn-blue), var(--egn-green));
+    color: white;
 }
 
 .hero-logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
+    width: 120px;
+    margin-bottom: 1rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.hero p {
-    max-width: 700px;
-    margin: 0 auto 25px;
-    font-size: 1.15rem;
-    color: #fff;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .cta-btn {
     display: inline-block;
-    background: #0a3d62;
-    color: white;
-    padding: 14px 26px;
-    border-radius: 8px;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.8rem;
+    background: white;
+    color: var(--egn-dark);
+    font-weight: bold;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .cta-btn:hover {
-    background: #08324f;
+    background: #f0f0f0;
 }
 
-/* --------------------------------------------------
+/* ===========================
    NAVIGATION
--------------------------------------------------- */
+=========================== */
 nav {
-    background: #0a3d62;
-    padding: 12px 0;
+    background: var(--egn-dark);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 18px;
+    flex-wrap: wrap;
     list-style: none;
+    gap: 1rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.2s;
+    padding: 0.4rem 0.8rem;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #a8d0ff;
+    color: var(--egn-green);
 }
 
-/* --------------------------------------------------
-   CARD ACCENT CLIP (applies to all cards)
--------------------------------------------------- */
-.card {
-    position: relative;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-    overflow: hidden;
-    color: #333;
+/* ===========================
+   SECTION HEADINGS
+=========================== */
+section {
+    padding: 3rem 1rem;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* Accent bar on left side */
-.card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background: #0a3d62;
-    border-radius: 12px 0 0 12px;
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--egn-dark);
 }
 
-/* --------------------------------------------------
-   TOP HIGHLIGHTS
--------------------------------------------------- */
+/* ===========================
+   TOP HIGHLIGHTS (3 CARDS)
+=========================== */
 .top-highlights {
     display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: -2rem;
 }
 
 .highlight-box {
-    composes: card;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-left: 6px solid var(--egn-blue);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow);
 }
 
-/* --------------------------------------------------
-   UNIVERSAL GRID SYSTEM
--------------------------------------------------- */
+/* ===========================
+   CARD GRID (Services, Packages, Maintenance)
+=========================== */
 .services-grid,
 .payments-grid,
 .testimonials-grid,
 .process-steps {
     display: grid;
-    gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
 }
 
-/* --------------------------------------------------
-   SERVICE / PAYMENT / TESTIMONIAL / PROCESS CARDS
--------------------------------------------------- */
 .service-card,
 .payment-card,
 .testimonial-card,
 .process-step {
-    composes: card;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-top: 5px solid var(--egn-green);
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: transform 0.2s;
+}
+
+.service-card:hover,
+.payment-card:hover,
+.testimonial-card:hover,
+.process-step:hover {
+    transform: translateY(-4px);
+}
+
+/* ===========================
+   TESTIMONIAL CARDS
+=========================== */
+.testimonial-card h3 {
+    font-size: 1.2rem;
+    color: var(--egn-blue);
+    margin-bottom: 0.5rem;
 }
 
 .testimonial-text {
     font-style: italic;
-    margin-bottom: 12px;
-    color: #666;
+    margin-bottom: 1rem;
 }
 
 .testimonial-name {
-    font-weight: 600;
-    color: #444;
+    font-weight: bold;
+    color: var(--egn-dark);
 }
 
-/* --------------------------------------------------
-   MAINTENANCE SECTION
--------------------------------------------------- */
-.update-options {
-    composes: card;
-    margin-top: 40px;
+/* ===========================
+   PROCESS STEPS
+=========================== */
+.process-step h3 {
+    color: var(--egn-blue);
+    margin-bottom: 0.5rem;
 }
 
-.update-options ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.update-note {
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* --------------------------------------------------
-   PAYMENTS
--------------------------------------------------- */
+/* ===========================
+   PAYMENT BUTTON
+=========================== */
 .payment-btn {
     display: inline-block;
-    background: #0a3d62;
+    background: var(--egn-blue);
     color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    margin-top: 10px;
-    transition: 0.2s;
+    margin-top: 1rem;
+    transition: 0.3s;
 }
 
 .payment-btn:hover {
-    background: #08324f;
+    background: var(--egn-green);
 }
 
-.payment-logos img {
-    width: 180px;
-    margin-top: 15px;
-}
-
-/* --------------------------------------------------
+/* ===========================
    ABOUT SECTION
--------------------------------------------------- */
+=========================== */
 .credentials-box {
-    composes: card;
-    margin: 25px 0;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-left: 6px solid var(--egn-green);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow);
+    margin: 1.5rem 0;
 }
 
-.tn-owned {
-    font-weight: 700;
-    margin: 20px 0;
-}
-
-/* --------------------------------------------------
-   CONTACT
--------------------------------------------------- */
-#contact p {
-    margin-bottom: 8px;
-}
-
-/* --------------------------------------------------
+/* ===========================
    FOOTER
--------------------------------------------------- */
+=========================== */
 footer {
     text-align: center;
-    padding: 25px;
-    background: #0a3d62;
+    padding: 1.5rem;
+    background: var(--egn-dark);
     color: white;
-    margin-top: 40px;
-    font-size: 0.9rem;
+    margin-top: 2rem;
 }
-
