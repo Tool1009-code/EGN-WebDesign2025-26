@@ -21,6 +21,7 @@ body {
     --egn-dark: #0a1a2a;
     --card-bg: #ffffff;
     --shadow: rgba(0, 0, 0, 0.08);
+    --section-grey: #e6e6e6; /* NEW */
 }
 
 /* ===========================
@@ -91,14 +92,20 @@ nav a:hover {
 }
 
 /* ===========================
-   SECTION HEADINGS
+   SECTION WRAPPER (NEW)
+   Adds grey background below hero
 =========================== */
 section {
     padding: 3rem 1rem;
     max-width: 1100px;
     margin: auto;
+    background: var(--section-grey); /* NEW */
+    border-radius: 10px; /* Softens the grey container */
 }
 
+/* ===========================
+   SECTION HEADINGS
+=========================== */
 h2 {
     text-align: center;
     margin-bottom: 2rem;
