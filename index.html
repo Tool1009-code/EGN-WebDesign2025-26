@@ -10,7 +10,13 @@
     <link rel="icon" href="img/egn-logo.png" type="image/png">
 </head>
 <body>
-    <body>
+
+    <!-- EGN GLITCH INTRO -->
+    <div id="egn-glitch-intro">
+        <img class="glitch-frame" src="img/Eye Image.jpg.webp">
+        <img class="glitch-frame" src="img/egn-logo.png">
+    </div>
+  
 
   <!-- Hero Section -->
     <header class="hero">
@@ -341,6 +347,24 @@
     <footer>
         <p>&copy; 2026 EGN Web Design. All rights reserved.</p>
     </footer>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const frames = document.querySelectorAll(".glitch-frame");
+    let index = 0;
+
+    const glitchInterval = setInterval(() => {
+        frames.forEach(f => f.style.opacity = 0);
+        frames[index].style.opacity = 1;
+        index = (index + 1) % frames.length;
+    }, 60);
+
+    setTimeout(() => {
+        clearInterval(glitchInterval);
+    }, 4000);
+});
+</script>
+
    
 </body>
 </html>
