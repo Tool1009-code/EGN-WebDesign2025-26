@@ -12,21 +12,7 @@
 <body>
     <body>
 
-    <!-- EGN GLITCH INTRO -->
-    <div id="egn-glitch-intro">
-        <img class="glitch-frame" src="glitch1.jpg">
-        <img class="glitch-frame" src="glitch2.jpg">
-        <img class="glitch-frame" src="glitch3.jpg">
-
-        <!-- ALL‑SEEING EYE FLASH -->
-        <img class="glitch-frame" id="eye-flash" src="eye.png">
-
-        <!-- FINAL EGN LOGO -->
-        <img class="glitch-frame" id="egn-final-logo" src="img/egn-logo.png">
-    </div>
-
-
-    <!-- Hero Section -->
+  <!-- Hero Section -->
     <header class="hero">
         <img src="img/egn-logo.png" alt="EGN Web Design Logo" class="hero-logo">
 
@@ -355,43 +341,7 @@
     <footer>
         <p>&copy; 2026 EGN Web Design. All rights reserved.</p>
     </footer>
-     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const frames = document.querySelectorAll(".glitch-frame");
-    const eye = document.getElementById("eye-flash");
-    const finalLogo = document.getElementById("egn-final-logo");
-
-    let index = 0;
-    let flashedEye = false;
-
-    const glitchInterval = setInterval(() => {
-        frames.forEach(f => f.style.opacity = 0);
-
-        // Eye flash once between 400ms–900ms
-        const now = performance.now();
-        if (!flashedEye && now > 400 && now < 900) {
-            eye.style.opacity = 1;
-            flashedEye = true;
-
-            setTimeout(() => {
-                eye.style.opacity = 0;
-            }, 120); // eye visible for 120ms
-        } else {
-            frames[index].style.opacity = 1;
-        }
-
-        index = (index + 1) % frames.length;
-    }, 120); // glitch speed
-
-    // After glitching, show only the EGN logo
-    setTimeout(() => {
-        clearInterval(glitchInterval);
-        frames.forEach(f => f.style.opacity = 0);
-        finalLogo.style.opacity = 1;
-    }, 2200); // glitch duration
-});
-</script>
-
+   
 </body>
 </html>
 
