@@ -229,3 +229,41 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+/* ============================
+   EGN GLITCH INTRO OVERLAY
+   ============================ */
+#egn-glitch-intro {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    overflow: hidden;
+    opacity: 1;
+    animation: introFadeOut 0.8s ease forwards;
+    animation-delay: 2.5s; /* total glitch time */
+}
+
+.glitch-frame {
+    position: absolute;
+    width: 60%;
+    max-width: 500px;
+    opacity: 0;
+}
+
+/* All‑Seeing Eye Flash Styling */
+#eye-flash {
+    filter: drop-shadow(0 0 12px #00ffea) contrast(140%);
+    transform: scale(1.05);
+}
+
+/* Fade out overlay */
+@keyframes introFadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
