@@ -360,11 +360,18 @@ document.addEventListener("DOMContentLoaded", () => {
         index = (index + 1) % frames.length;
     }, 60);
 
+    // Glitch ends at 4000ms
     setTimeout(() => {
         clearInterval(glitchInterval);
     }, 4000);
+
+    // Alert appears JUST BEFORE glitch ends
+    setTimeout(() => {
+        alert("Welcome To EGN!");
+    }, 3500);
 });
 </script>
+
 
    
 </body>
