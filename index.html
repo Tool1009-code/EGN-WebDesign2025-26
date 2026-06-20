@@ -349,26 +349,36 @@
         <p>&copy; 2026 EGN Web Design. All rights reserved.</p>
     </footer>
 
-    <script>
+   <!-- Add your audio element ABOVE the script -->
+<audio id="egnIntro" preload="auto">
+    <source src="EGN intro.mp3" type="audio/mpeg">
+</audio>
+
+<script>
 document.addEventListener("DOMContentLoaded", () => {
     const frames = document.querySelectorAll(".glitch-frame");
     let index = 0;
 
+    // Start glitch animation
     const glitchInterval = setInterval(() => {
         frames.forEach(f => f.style.opacity = 0);
         frames[index].style.opacity = 1;
         index = (index + 1) % frames.length;
     }, 60);
 
-    // Glitch ends at 4000ms
+    // Stop glitch at 4000ms
     setTimeout(() => {
         clearInterval(glitchInterval);
     }, 4000);
 
-    // Alert appears JUST BEFORE glitch ends
-    setTimeout(() => {
-        alert("Welcome To EGN!");
-    }, 3500);
+    // Play audio immediately on load
+    const introAudio = document.getElementById("egnIntro");
+    introAudio.volume = 1.0;
+
+    introAudio.play().catch(() => {
+        // If autoplay is blocked, play on first click
+        document.addEventListener("click", () => introAudio.play(), { once: true });
+    });
 });
 </script>
 
