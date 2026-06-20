@@ -348,44 +348,54 @@
     <footer>
         <p>&copy; 2026 EGN Web Design. All rights reserved.</p>
     </footer>
+<!-- ================= AUDIO INTRO ================= -->
 
-   <!-- Add your audio element ABOVE the script -->
-<audio id="egnIntro" preload="auto">
+    <audio id="egnIntro" preload="auto" autoplay playsinline>
     <source src="EGN intro.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Add your audio element ABOVE the script -->
-<audio id="egnIntro" preload="auto">
-    <source src="EGN intro.mp3" type="audio/mpeg">
-</audio>
-
+<!-- ================= GLITCH + AUDIO SCRIPT ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* ---------------- GLITCH ANIMATION ---------------- */
     const frames = document.querySelectorAll(".glitch-frame");
     let index = 0;
 
-    // Start glitch animation
     const glitchInterval = setInterval(() => {
         frames.forEach(f => f.style.opacity = 0);
         frames[index].style.opacity = 1;
         index = (index + 1) % frames.length;
     }, 60);
 
-    // Stop glitch at 4000ms
+    // Stop glitch after 4 seconds
     setTimeout(() => {
         clearInterval(glitchInterval);
+        const intro = document.getElementById("glitch-intro");
+        if (intro) intro.style.display = "none";
     }, 4000);
 
-    // Play audio immediately on load
+    /* ---------------- AUDIO AUTOPLAY ENGINE ---------------- */
     const introAudio = document.getElementById("egnIntro");
     introAudio.volume = 1.0;
 
-    introAudio.play().catch(() => {
-        // If autoplay is blocked, play on first click
-        document.addEventListener("click", () => introAudio.play(), { once: true });
-    });
+    // Attempt autoplay immediately
+    const tryPlay = () => {
+        introAudio.play().catch(() => {});
+    };
+
+    tryPlay();              // First attempt
+    setTimeout(tryPlay, 200);  // Second attempt after DOM settles
+    setTimeout(tryPlay, 800);  // Third attempt after glitch begins
+
+    // Final guaranteed fallback: play on first click
+    document.addEventListener("click", () => {
+        introAudio.play();
+    }, { once: true });
+
 });
 </script>
+
 
 
    
