@@ -348,9 +348,9 @@
     <footer>
         <p>&copy; 2026 EGN Web Design. All rights reserved.</p>
     </footer>
-<!-- ================= AUDIO INTRO ================= -->
 
-    <audio id="egnIntro" preload="auto" autoplay playsinline>
+<!-- ================= AUDIO INTRO ================= -->
+<audio id="egnIntro" preload="auto" autoplay playsinline>
     <source src="EGN intro.mp3" type="audio/mpeg">
 </audio>
 
@@ -379,23 +379,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const introAudio = document.getElementById("egnIntro");
     introAudio.volume = 1.0;
 
-    // Attempt autoplay immediately
-    const tryPlay = () => {
-        introAudio.play().catch(() => {});
-    };
+    // Try autoplay immediately
+    const tryPlay = () => introAudio.play().catch(() => {});
 
-    tryPlay();              // First attempt
-    setTimeout(tryPlay, 200);  // Second attempt after DOM settles
-    setTimeout(tryPlay, 800);  // Third attempt after glitch begins
+    tryPlay();               // Attempt 1
+    setTimeout(tryPlay, 200); // Attempt 2
+    setTimeout(tryPlay, 800); // Attempt 3
 
-    // Final guaranteed fallback: play on first click
+    // Fallback 1: play on first click
     document.addEventListener("click", () => {
+        introAudio.play();
+    }, { once: true });
+
+    // Fallback 2: play on first scroll
+    document.addEventListener("scroll", () => {
         introAudio.play();
     }, { once: true });
 
 });
 </script>
-
 
 
    
