@@ -354,9 +354,12 @@
     <source src="EGN intro.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ================= GLITCH + AUDIO SCRIPT ================= -->
+<!-- ================= GLITCH + AUDIO + ALERT SCRIPT ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* ---------------- ALERT WINDOW ---------------- */
+    alert("Welcome to EGN Web Design. Let's get your business the attention it deserves!");
 
     /* ---------------- GLITCH ANIMATION ---------------- */
     const frames = document.querySelectorAll(".glitch-frame");
@@ -381,18 +384,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Try autoplay immediately
     const tryPlay = () => introAudio.play().catch(() => {});
-
-    tryPlay();               // Attempt 1
+    tryPlay();                // Attempt 1
     setTimeout(tryPlay, 200); // Attempt 2
     setTimeout(tryPlay, 800); // Attempt 3
 
-    // Fallback 1: play on first click
-    document.addEventListener("click", () => {
+    // PRIORITY FALLBACK 1: play on first scroll (highest priority)
+    document.addEventListener("scroll", () => {
         introAudio.play();
     }, { once: true });
 
-    // Fallback 2: play on first scroll
-    document.addEventListener("scroll", () => {
+    // PRIORITY FALLBACK 2: play on first click (only if scroll never happened)
+    document.addEventListener("click", () => {
         introAudio.play();
     }, { once: true });
 
