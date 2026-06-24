@@ -245,8 +245,8 @@ footer {
 
 .glitch-frame {
     position: absolute;
-    width: 60%;
-    max-width: 500px;
+    width: 75%;
+    max-width: 700px;
     opacity: 0;
 }
 
